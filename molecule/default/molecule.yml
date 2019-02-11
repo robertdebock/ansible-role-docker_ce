@@ -1,0 +1,59 @@
+---
+dependency:
+  name: galaxy
+  options:
+    role-file: requirements.yml
+driver:
+  name: docker
+lint:
+  name: yamllint
+platforms:
+  - name: docker_ce-alpine-edge
+    image: alpine:edge
+    command: sh -c "while true ; do sleep 1 ; done"
+  - name: docker_ce-alpine-latest
+    image: alpine:latest
+    command: sh -c "while true ; do sleep 1 ; done"
+  - name: docker_ce-archlinux
+    image: archlinux/base
+  - name: docker_ce-centos-6
+    image: centos:6
+  - name: docker_ce-centos-latest
+    image: centos:latest
+  - name: docker_ce-debian-latest
+    image: debian:latest
+  - name: docker_ce-debian-stable
+    image: debian:stable
+  - name: docker_ce-debian-unstable
+    image: debian:unstable
+  - name: docker_ce-fedora-latest
+    image: fedora:latest
+  - name: docker_ce-fedora-rawhide
+    image: fedora:rawhide
+  - name: docker_ce-opensuse-leap
+    image: opensuse:leap
+  - name: docker_ce-opensuse-tumbleweed
+    image: opensuse:tumbleweed
+  - name: docker_ce-ubuntu-latest
+    image: ubuntu:latest
+  - name: docker_ce-ubuntu-rolling
+    image: ubuntu:rolling
+  - name: docker_ce-ubuntu-devel
+    image: ubuntu:devel
+provisioner:
+  name: ansible
+  inventory:
+    group_vars:
+      all:
+        docker_ce_ignore_docker: no
+    host_vars:
+      docker_ce-fedora-rawhide:
+        ansible_python_interpreter: /usr/bin/python3
+  lint:
+    name: ansible-lint
+scenario:
+  name: default
+verifier:
+  name: goss
+  lint:
+    name: yamllint

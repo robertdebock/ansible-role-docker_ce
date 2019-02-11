@@ -1,0 +1,86 @@
+---
+# tasks file for docker_ce
+- name: test veriables and environment
+  assert:
+    that:
+      - docker_ce_package_state is defined
+      - docker_ce_package_state == "present" or
+        docker_ce_package_state == "latest" or
+        docker_ce_package_state == "absent"
+      - docker_ce_ignore_docker is defined
+      - docker_ce_ignore_docker or
+        not docker_ce_ignore_docker
+      - ( ansible_distribution == "Ubuntu" and
+          ( ansible_distribution_version == "18.10" or
+            ansible_distribution_version == "18.04" or
+            ansible_distribution_version == "16.04" )
+        ) or
+        ( ansible_distribution == "Debian" and
+          ( ansible_distribution_major_version == "9" or
+            ansible_distribution_major_version == "10" )
+        ) or
+        ( ansible_distribution == "Fedora" and
+          ( ansible_distribution_major_version == "28" or
+            ansible_distribution_major_version == "29" )
+        ) or
+        ( ansible_distribution == "CentOS" and
+          ( ansible_distribution_major_version == "7" )
+        )
+
+- name: remove conflicting packages
+  package:
+    name: "{{ docker_ce_conflicting_packages }}"
+    state: absent
+
+- name: install apt key
+  apt_key:
+    url: "{{ docker_ce_apt_key_url }}"
+    state: present
+  when:
+    - ansible_pkg_mgr == "apt"
+
+- name: install docker_ce repository for apt
+  apt_repository:
+    repo: "{{ docker_ce_apt_repository_repo }}"
+    state: present
+  when:
+    - ansible_pkg_mgr == "apt"
+  notify:
+    - apt update cache
+
+- name: install docker_ce repository for yum
+  yum_repository:
+    name: "{{ item.name }}"
+    description: "{{ item.description }}"
+    baseurl: "{{ item.baseurl }}"
+    enabled: yes
+    gpgcheck: yes
+    gpgkey: "{{ item.gpgkey }}"
+  with_items:
+    - "{{ docker_ce_yum_repositories }}"
+  loop_control:
+    label: "{{ item.name }}"
+  when:
+    - ansible_pkg_mgr == "yum" or
+      ansible_pkg_mgr == "dnf"
+
+- name: install docker pip packages
+  pip:
+    name: "{{ docker_ce_pip_packages }}"
+    state: "{{ docker_ce_package_state }}"
+
+- name: install docker_ce
+  package:
+    name: "{{ docker_ce_packages }}"
+    state: "{{ docker_ce_package_state }}"
+  register: docker_ce_install_docker_ce
+  until: docker_ce_install_docker_ce is succeeded
+  retries: 3
+
+- name: start and enable docker_ce
+  service:
+    name: "{{ docker_ce_service }}"
+    state: started
+    enabled: yes
+  when:
+    - ansible_virtualization_type != "docker" or docker_ce_ignore_docker

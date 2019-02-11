@@ -1,0 +1,57 @@
+---
+# vars file for docker_ce
+_docker_ce_conflicting_packages:
+  Debian:
+    - docker
+    - docker-engine
+    - docker.io
+    - containerd
+    - runc
+  CentOS:
+    - docker
+    - docker-client
+    - docker-client-latest
+    - docker-common
+    - docker-latest
+    - docker-latest-logrotate
+    - docker-logrotate
+    - docker-engine
+  Fedora:
+    - docker
+    - docker-client
+    - docker-client-latest
+    - docker-common
+    - docker-latest
+    - docker-latest-logrotate
+    - docker-logrotate
+    - docker-selinux
+    - docker-engine-selinux
+    - docker-engine
+  Ubuntu:
+    - docker
+    - docker-engine
+    - docker.io
+    - containerd
+    - runc
+
+docker_ce_conflicting_packages: "{{ _docker_ce_conflicting_packages[ansible_distribution] }}"
+
+docker_ce_apt_key_url: "https://download.docker.com/linux/{{ ansible_distribution | lower }}/gpg"
+
+docker_ce_apt_repository_repo: "deb [arch=amd64] https://download.docker.com/linux/{{ ansible_distribution | lower }} {{ ansible_distribution_release }} stable"
+
+docker_ce_yum_repositories:
+  - name: docker-ce-stable
+    description: "Docker CE Stable - $basearch"
+    baseurl: "https://download.docker.com/linux/{{ ansible_distribution | lower }}/$releasever/$basearch/stable"
+    gpgkey: "https://download.docker.com/linux/{{ ansible_distribution | lower }}/gpg"
+
+docker_ce_pip_packages:
+  - docker
+
+docker_ce_packages:
+  - docker-ce
+  - docker-ce-cli
+  - containerd.io
+
+docker_ce_service: docker
