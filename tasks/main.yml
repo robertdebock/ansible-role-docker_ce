@@ -69,6 +69,12 @@
     name: "{{ docker_ce_pip_packages }}"
     state: "{{ docker_ce_package_state }}"
 
+- name: add docker group
+  group:
+    name: docker
+    state: present
+    system: yes
+
 - name: install docker_ce
   package:
     name: "{{ docker_ce_packages }}"
