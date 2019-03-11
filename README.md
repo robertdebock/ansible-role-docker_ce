@@ -33,7 +33,6 @@ This example is taken from `molecule/default/playbook.yml`:
           - "2222:22"
       when:
         - ansible_virtualization_type != "docker"
-
 ```
 
 Also see a [full explanation and example](https://robertdebock.nl/how-to-use-these-roles.html) on how to use these roles.
@@ -48,12 +47,6 @@ These variables are set in `defaults/main.yml`:
 
 # To update packages this role places on the system, set `docker_ce_package_state` to `latest`.
 docker_ce_package_state: present
-
-# Some Docker containers do not allow managing services, rebooting and writing
-# to some locations in /etc. The role skips tasks that will typically fail in
-# Docker. With this parameter you can tell the role to -not- skip these tasks.
-docker_ce_ignore_docker: yes
-
 ```
 
 Requirements
