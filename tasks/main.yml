@@ -70,7 +70,7 @@
 - name: install docker pip packages
   pip:
     name: "{{ docker_ce_pip_packages }}"
-    state: "{{ docker_ce_package_state }}"
+    state: present
   register: docker_ce_install_docker_pip_packages
   until: docker_ce_install_docker_pip_packages is succeeded
   retries: 3
@@ -84,7 +84,7 @@
 - name: install docker_ce
   package:
     name: "{{ docker_ce_packages }}"
-    state: "{{ docker_ce_package_state }}"
+    state: present
   register: docker_ce_install_docker_ce
   until: docker_ce_install_docker_ce is succeeded
   retries: 3

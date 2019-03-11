@@ -44,9 +44,6 @@ These variables are set in `defaults/main.yml`:
 ```yaml
 ---
 # defaults file for docker_ce
-
-# To update packages this role places on the system, set `docker_ce_package_state` to `latest`.
-docker_ce_package_state: present
 ```
 
 Requirements
