@@ -3,16 +3,16 @@ dependency:
   name: galaxy
   options:
     role-file: requirements.yml
+lint:
+  name: yamllint
 driver:
   name: vagrant
   provider:
     name: virtualbox
-lint:
-  name: yamllint
 platforms:
-  - name: docker-ce-debian
+  - name: docker_ce-debian
     box: debian/stretch64
-  - name: docker-ce-fedora
+  - name: docker_ce-fedora
     box: fedora/29-cloud-base
 provisioner:
   name: ansible

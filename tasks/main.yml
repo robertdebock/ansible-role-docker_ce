@@ -3,13 +3,6 @@
 - name: test veriables and environment
   assert:
     that:
-      - docker_ce_package_state is defined
-      - docker_ce_package_state == "present" or
-        docker_ce_package_state == "latest" or
-        docker_ce_package_state == "absent"
-      - docker_ce_ignore_docker is defined
-      - docker_ce_ignore_docker or
-        not docker_ce_ignore_docker
       - ( ansible_distribution == "Ubuntu" and
           ( ansible_distribution_version == "18.10" or
             ansible_distribution_version == "18.04" or
@@ -95,4 +88,4 @@
     state: started
     enabled: yes
   when:
-    - ansible_virtualization_type != "docker" or docker_ce_ignore_docker
+    - ansible_virtualization_type != "docker"

@@ -3,10 +3,10 @@ dependency:
   name: galaxy
   options:
     role-file: requirements.yml
-driver:
-  name: docker
 lint:
   name: yamllint
+driver:
+  name: docker
 platforms:
   - name: docker_ce-alpine-edge
     image: alpine:edge
@@ -38,15 +38,10 @@ platforms:
     image: ubuntu:rolling
   - name: docker_ce-ubuntu-devel
     image: ubuntu:devel
+  - name: docker_ce-ubuntu-latest
+    image: ubuntu:latest
 provisioner:
   name: ansible
-  inventory:
-    group_vars:
-      all:
-        docker_ce_ignore_docker: no
-    host_vars:
-      docker_ce-fedora-rawhide:
-        ansible_python_interpreter: /usr/bin/python3
   lint:
     name: ansible-lint
 scenario:
