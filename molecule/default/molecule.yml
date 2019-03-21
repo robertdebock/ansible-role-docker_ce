@@ -52,9 +52,6 @@ platforms:
   - name: docker_ce-ubuntu-devel
     image: ubuntu:devel
     pre_build_image: yes
-  - name: docker_ce-ubuntu-latest
-    image: ubuntu:latest
-    pre_build_image: yes
 provisioner:
   name: ansible
   playbooks:
