@@ -8,29 +8,19 @@ galaxy_info:
   min_ansible_version: 2.6
 
   platforms:
-    - name: Alpine
-      versions:
-        - all
-    - name: ArchLinux
-      version:
-        - all
     - name: Debian
       versions:
-        - all
+        - stretch
     - name: EL
       version:
-        - 6
         - 7
     - name: Fedora
       versions:
         - all
-    - name: OpenSUSE
-      versions:
-        - all
     - name: Ubuntu
       versions:
-        - artful
         - bionic
+        - cosmic
 
   galaxy_tags:
     - dockerce
