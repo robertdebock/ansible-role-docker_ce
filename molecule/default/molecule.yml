@@ -59,5 +59,11 @@ provisioner:
     converge: ../resources/playbook.yml
   lint:
     name: ansible-lint
+  inventory:
+    host_vars:
+      docker_ce-fedora-latest:
+        ansible_python_interpreter: /usr/bin/python3
+      docker_ce-fedora-rawhide:
+        ansible_python_interpreter: /usr/bin/python3
 scenario:
   name: default
