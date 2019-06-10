@@ -35,12 +35,12 @@ _docker_ce_conflicting_packages:
     - runc
 
 _docker_ce_arches:
-  - default: amd64
-  - x86_64: amd64
-  - aarch64: arm64
-  - armv7l: armhf
-  - s390x: s390x
-  - ppc64le: ppc64le
+  default: amd64
+  x86_64: amd64
+  aarch64: arm64
+  armv7l: armhf
+  s390x: s390x
+  ppc64le: ppc64le
 
 docker_ce_conflicting_packages: "{{ _docker_ce_conflicting_packages[ansible_distribution] }}"
 
