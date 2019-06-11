@@ -34,11 +34,21 @@ _docker_ce_conflicting_packages:
     - containerd
     - runc
 
+_docker_ce_arches:
+  default: amd64
+  x86_64: amd64
+  aarch64: arm64
+  armv7l: armhf
+  s390x: s390x
+  ppc64le: ppc64le
+
 docker_ce_conflicting_packages: "{{ _docker_ce_conflicting_packages[ansible_distribution] }}"
 
 docker_ce_apt_key_url: "https://download.docker.com/linux/{{ ansible_distribution | lower }}/gpg"
 
-docker_ce_apt_repository_repo: "deb [arch=amd64] https://download.docker.com/linux/{{ ansible_distribution | lower }} {{ ansible_distribution_release }} stable"
+docker_ce_apt_repository_arch: "{{ _docker_ce_arches[ansible_architecture] | default(_docker_ce_arches['default']) }}"
+
+docker_ce_apt_repository_repo: "deb [arch={{ docker_ce_apt_repository_arch }}] https://download.docker.com/linux/{{ ansible_distribution | lower }} {{ ansible_distribution_release }} stable"
 
 docker_ce_yum_repositories:
   - name: docker-ce-stable
