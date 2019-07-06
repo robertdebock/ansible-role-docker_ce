@@ -41,7 +41,7 @@ platforms:
     image: fedora:rawhide
     pre_build_image: yes
   - name: docker_ce-opensuse-leap
-    image: opensuse:leap
+    image: opensuse/leap
     pre_build_image: yes
   - name: docker_ce-ubuntu-latest
     image: ubuntu:latest
