@@ -25,9 +25,6 @@ platforms:
   - name: docker_ce-centos-latest
     image: centos:latest
     pre_build_image: yes
-  - name: docker_ce-debian-latest
-    image: debian:latest
-    pre_build_image: yes
   - name: docker_ce-debian-stable
     image: debian:stable
     pre_build_image: yes
