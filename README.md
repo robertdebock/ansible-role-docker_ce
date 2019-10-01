@@ -6,6 +6,9 @@ docker_ce
 
 Install and configure Docker CE on your system.
 
+<img src="https://img.shields.io/ansible/role/d/37728"/>
+<img src="https://img.shields.io/ansible/quality/37728"/>
+
 Example Playbook
 ----------------
 
@@ -81,7 +84,6 @@ This role uses the following modules:
 - apt
 - apt_key
 - apt_repository
-- assert
 - group
 - package
 - pip
