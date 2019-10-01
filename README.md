@@ -114,15 +114,28 @@ This role has been tested against the following distributions and Ansible versio
 |centos-latest|yes|yes|yes*|
 |debian-stable|yes|yes|yes*|
 |debian-unstable*|no|no|no*|
-|fedora-latest|no|no|no*|
-|fedora-rawhide*|no|no|no*|
+|fedora-latest|yes|yes|yes*|
+|fedora-rawhide*|yes|yes|yes*|
 |opensuse-leap|no|no|no*|
 |ubuntu-devel*|no|no|no*|
 |ubuntu-latest|yes|yes|yes*|
-|ubuntu-rolling|no|no|no*|
+|ubuntu-rolling|yes|yes|yes*|
 
 A single star means the build may fail, it's marked as an experimental build.
 
+Exceptions
+----------
+
+Some variarations of the build matrix do not work. These are the variations and reasons why the build won't work:
+
+| variation                 | reason                 |
+|---------------------------|------------------------|
+| Alpine | Not supported. |
+| Archlinux | Not supported. |
+| Debian unstable | Not supported. |
+| CentOS 6 | Not supported. |
+| OpenSUSE Leap | Not supported. |
+| Ubuntu devel | Not supported. |
 
 
 

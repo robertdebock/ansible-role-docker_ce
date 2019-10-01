@@ -1,6 +1,8 @@
 ---
 # vars file for docker_ce
 _docker_ce_conflicting_packages:
+  Aloine:
+    - docker
   Debian:
     - docker
     - docker-engine
