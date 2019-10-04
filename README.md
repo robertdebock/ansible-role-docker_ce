@@ -110,8 +110,8 @@ This role has been tested against the following distributions and Ansible versio
 |alpine-edge*|no|no|no*|
 |alpine-latest|no|no|no*|
 |archlinux|no|no|no*|
-|centos-7|no|no|no*|
-|centos-latest|yes|yes|yes*|
+|centos-7|yes|yes|yes*|
+|centos-latest|no|no|no*|
 |debian-stable|yes|yes|yes*|
 |debian-unstable*|no|no|no*|
 |fedora-latest|yes|yes|yes*|
@@ -133,7 +133,7 @@ Some variarations of the build matrix do not work. These are the variations and 
 | Alpine | Not supported. |
 | Archlinux | Not supported. |
 | Debian unstable | Not supported. |
-| CentOS 6 | Not supported. |
+| CentOS 8 | Not supported. |
 | OpenSUSE Leap | Not supported. |
 | Ubuntu devel | Not supported. |
 

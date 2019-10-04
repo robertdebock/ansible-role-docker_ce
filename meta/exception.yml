@@ -6,7 +6,7 @@ exceptions:
     reason: Not supported.
   - variation: Debian unstable
     reason: Not supported.
-  - variation: CentOS 6
+  - variation: CentOS 8
     reason: Not supported.
   - variation: OpenSUSE Leap
     reason: Not supported.
