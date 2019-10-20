@@ -13,7 +13,7 @@ galaxy_info:
         - stretch
     - name: EL
       version:
-        - 7
+        - 8
     - name: Fedora
       versions:
         - all
