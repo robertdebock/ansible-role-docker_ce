@@ -107,16 +107,16 @@ This role has been tested on these [container images](https://hub.docker.com/):
 
 |container|tag|allow_failures|
 |---------|---|--------------|
-|docker-debian-systemd|stable|yes|
-|docker-debian-systemd|unstable|yes|
-|docker-debian-systemd|latest|no|
-|docker-centos-systemd|latest|no|
-|docker-redhat-systemd|latest|no|
-|docker-fedora-systemd|latest|no|
-|docker-fedora-systemd|rawhide|yes|
-|docker-ubuntu-systemd|rolling|yes|
-|docker-ubuntu-systemd|devel|yes|
-|docker-ubuntu-systemd|latest|no|
+|debian|stable|yes|
+|debian|unstable|yes|
+|debian|latest|no|
+|centos|latest|no|
+|redhat|latest|no|
+|fedora|latest|no|
+|fedora|rawhide|yes|
+|ubuntu|rolling|yes|
+|ubuntu|devel|yes|
+|ubuntu|latest|no|
 
 This role has been tested on these Ansible versions:
 
