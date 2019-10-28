@@ -15,7 +15,6 @@ env:
     - image="debian" tag="unstable"
     - image="debian"
     - image="centos"
-    - image="redhat"
     - image="fedora"
     - image="fedora" tag="rawhide"
     - image="ubuntu" tag="rolling"
