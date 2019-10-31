@@ -13,7 +13,7 @@ galaxy_info:
         - stretch
     - name: EL
       versions:
-        - 8
+        - 7
     - name: Fedora
       versions:
         - all
@@ -23,15 +23,7 @@ galaxy_info:
         - cosmic
 
   galaxy_tags:
-    - dockerce
-    - alpine
-    - archlinux
     - centos
-    - debian
-    - el
-    - fedora
-    - opensuse
-    - rhel
-    - ubuntu
+    - dockerce
 
 dependencies: []

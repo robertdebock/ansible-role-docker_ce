@@ -4,8 +4,6 @@
   service:
     name: "{{ docker_ce_service }}"
     state: restarted
-  when:
-    - ansible_virtualization_type != "docker"
 
 - name: apt update cache
   apt:
