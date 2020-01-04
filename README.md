@@ -4,6 +4,8 @@ docker_ce
 <img src="https://docs.ansible.com/ansible-tower/3.2.4/html_ja/installandreference/_static/images/logo_invert.png" width="10%" height="10%" alt="Ansible logo" align="right"/>
 <a href="https://travis-ci.org/robertdebock/ansible-role-docker_ce"> <img src="https://travis-ci.org/robertdebock/ansible-role-docker_ce.svg?branch=master" alt="Build status"/></a> <img src="https://img.shields.io/ansible/role/d/37728"/> <img src="https://img.shields.io/ansible/quality/37728"/>
 
+<a href="https://github.com/robertdebock/ansible-role-docker_ce/actions"><img src="https://github.com/robertdebock/ansible-role-docker_ce/workflows/GitHub%20Action/badge.svg"/></a>
+
 Install and configure Docker CE on your system.
 
 Example Playbook
