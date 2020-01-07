@@ -21,16 +21,6 @@ This example is taken from `molecule/resources/playbook.yml` and is tested on ea
 
   roles:
     - robertdebock.docker_ce
-
-  tasks:
-    - name: Create a container
-      docker_container:
-        name: openssh
-        image: robertdebock/docker-centos-openssh
-        ports:
-          - "2222:22"
-      when:
-        - ansible_virtualization_type != "docker"
 ```
 
 The machine you are running this on, may need to be prepared, I use this playbook to ensure everything is in place to let the role work.
@@ -49,6 +39,24 @@ The machine you are running this on, may need to be prepared, I use this playboo
     - role: robertdebock.python_pip
 ```
 
+After running this role, this playbook runs to verify that everything works, this may be a good example how you can use this role.
+```yaml
+---
+- name: Converge
+  hosts: all
+  become: yes
+  gather_facts: yes
+
+  tasks:
+    - name: Create a container
+      docker_container:
+        name: openssh
+        image: robertdebock/docker-centos-openssh
+        ports:
+          - "2222:22"
+      when:
+        - ansible_virtualization_type != "docker"
+```
 
 Also see a [full explanation and example](https://robertdebock.nl/how-to-use-these-roles.html) on how to use these roles.
 
