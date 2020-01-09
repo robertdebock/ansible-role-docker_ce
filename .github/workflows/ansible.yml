@@ -36,9 +36,7 @@ jobs:
           - image: "fedora"
             tag: "30"
           - image: "fedora"
-            tag: "latest"
-          - image: "fedora"
-            tag: "rawhide"
+            tag: "31"
           - image: "ubuntu"
             tag: "latest"
     steps:
