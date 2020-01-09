@@ -10,7 +10,7 @@ galaxy_info:
   platforms:
     - name: Debian
       versions:
-        - stretch
+        - buster
     - name: EL
       versions:
         - 7
@@ -20,7 +20,6 @@ galaxy_info:
     - name: Ubuntu
       versions:
         - bionic
-        - cosmic
 
   galaxy_tags:
     - centos
