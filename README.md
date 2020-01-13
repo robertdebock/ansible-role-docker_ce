@@ -103,7 +103,6 @@ This role has been tested on these [container images](https://hub.docker.com/):
 |container|tags|
 |---------|----|
 |debian|buster|
-|el|7|
 |fedora|30, 31|
 |ubuntu|bionic|
 

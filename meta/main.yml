@@ -11,9 +11,6 @@ galaxy_info:
     - name: Debian
       versions:
         - buster
-    - name: EL
-      versions:
-        - 7
     - name: Fedora
       versions:
         - 30
