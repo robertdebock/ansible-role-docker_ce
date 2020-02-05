@@ -32,8 +32,7 @@
     enabled: yes
     gpgcheck: yes
     gpgkey: "{{ item.gpgkey }}"
-  with_items:
-    - "{{ docker_ce_yum_repositories }}"
+  loop: "{{ docker_ce_yum_repositories }}"
   loop_control:
     label: "{{ item.name }}"
   when:
