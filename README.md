@@ -95,7 +95,7 @@ This role has been tested on these [container images](https://hub.docker.com/):
 |container|tags|
 |---------|----|
 |debian|buster|
-|fedora|30, 31|
+|fedora|31, 32|
 |ubuntu|bionic|
 
 The minimum version of Ansible required is 2.8 but tests have been done to:
