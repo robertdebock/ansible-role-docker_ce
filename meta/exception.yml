@@ -12,3 +12,5 @@ exceptions:
     reason: Not supported.
   - variation: Ubuntu devel
     reason: Not supported.
+  - variation: fedora:32
+    reason: "The RPMs are not published at https://download.docker.com/linux/fedora"

@@ -36,8 +36,6 @@ jobs:
             tag: "latest"
           - image: "fedora"
             tag: "31"
-          - image: "fedora"
-            tag: "latest"
           - image: "ubuntu"
             tag: "bionic"
     steps:

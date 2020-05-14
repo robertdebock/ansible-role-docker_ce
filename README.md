@@ -95,7 +95,7 @@ This role has been tested on these [container images](https://hub.docker.com/):
 |container|tags|
 |---------|----|
 |debian|buster|
-|fedora|31, 32|
+|fedora|31|
 |ubuntu|bionic|
 
 The minimum version of Ansible required is 2.8 but tests have been done to:
@@ -116,6 +116,7 @@ Some variarations of the build matrix do not work. These are the variations and 
 | CentOS 8 | Not supported. |
 | OpenSUSE Leap | Not supported. |
 | Ubuntu devel | Not supported. |
+| fedora:32 | The RPMs are not published at https://download.docker.com/linux/fedora |
 
 
 ## Testing
