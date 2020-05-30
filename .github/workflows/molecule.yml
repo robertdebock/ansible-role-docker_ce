@@ -38,6 +38,8 @@ jobs:
           - image: "fedora"
             tag: "31"
           - image: "ubuntu"
+            tag: "latest"
+          - image: "ubuntu"
             tag: "bionic"
     steps:
       - name: checkout
