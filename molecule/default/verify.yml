@@ -12,4 +12,4 @@
         ports:
           - "2222:22"
       when:
-        - ansible_virtualization_type != "docker"
+        - ansible_connection != "docker"
