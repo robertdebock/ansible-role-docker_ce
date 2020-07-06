@@ -1,5 +1,6 @@
 ---
 # vars file for docker_ce
+
 _docker_ce_conflicting_packages:
   Alpine:
     - docker
