@@ -11,9 +11,6 @@
     state: present
   when:
     - ansible_pkg_mgr == "apt"
-  register: docker_ce_install_apt_key
-  until: docker_ce_install_apt_key is succeeded
-  retries: 3
 
 - name: install docker_ce repository for apt
   apt_repository:
@@ -43,9 +40,6 @@
   pip:
     name: "{{ docker_ce_pip_packages }}"
     state: present
-  register: docker_ce_install_docker_pip_packages
-  until: docker_ce_install_docker_pip_packages is succeeded
-  retries: 3
 
 - name: add docker group
   group:
@@ -57,9 +51,6 @@
   package:
     name: "{{ docker_ce_packages }}"
     state: present
-  register: docker_ce_install_docker_ce
-  until: docker_ce_install_docker_ce is succeeded
-  retries: 3
 
 - name: start and enable docker_ce
   service:
