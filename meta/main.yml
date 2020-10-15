@@ -20,7 +20,7 @@ galaxy_info:
         - bionic
 
   galaxy_tags:
-    - centos
     - dockerce
+    - docker
 
 dependencies: []
