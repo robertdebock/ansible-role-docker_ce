@@ -60,7 +60,7 @@ docker_ce_apt_repository_repo: "deb [arch={{ docker_ce_apt_repository_arch }}] h
 
 # CentOs / Fedora / RedHat repo
 
-# RedHat is not availabe as a distro on http://download.docker.com/linux, replace it with CentOs
+# RedHat is not availabe as a distro on http://download.docker.com/linux, replace it with CentOS
 _docker_ce_yum_distribution: "{% if ansible_distribution == 'RedHat' %}CentOS{% else %}{{ ansible_distribution }}{% endif %}"
 _docker_ce_yum_releasever: "{% if ansible_distribution in ['CentOS','RedHat'] %}{{ ansible_distribution_major_version }}{% else %}$releasever{% endif %}"
 docker_ce_yum_repositories:

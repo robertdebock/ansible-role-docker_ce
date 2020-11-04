@@ -18,6 +18,8 @@ env:
     namespace="robertdebock"
   jobs:
     - image="debian" tag="latest"
+    - image="centos" tag="7"
+    - image="centos" tag="latest"
     - image="fedora" tag="32"
     - image="ubuntu" tag="latest"
     - image="ubuntu" tag="bionic"
