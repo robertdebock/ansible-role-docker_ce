@@ -17,11 +17,10 @@ galaxy_info:
         - 8
     - name: Fedora
       versions:
-        - 32
+        - all
     - name: Ubuntu
       versions:
-        - focal
-        - bionic
+        - all
 
   galaxy_tags:
     - dockerce

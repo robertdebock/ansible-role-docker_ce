@@ -1,9 +1,5 @@
 ---
 # tasks file for docker_ce
-- name: remove conflicting packages
-  package:
-    name: "{{ docker_ce_conflicting_packages }}"
-    state: absent
 
 - name: install apt key
   apt_key:
@@ -21,33 +17,14 @@
   notify:
     - apt update cache
 
-- name: install docker_ce repository for yum
-  yum_repository:
-    name: "{{ item.name }}"
-    description: "{{ item.description }}"
-    baseurl: "{{ item.baseurl }}"
-    enabled: yes
-    gpgcheck: yes
-    gpgkey: "{{ item.gpgkey }}"
-  loop: "{{ docker_ce_yum_repositories }}"
-  loop_control:
-    label: "{{ item.name }}"
+- name: install docker_ce repository for dnf/yum
+  get_url:
+    url: "{{ docker_ce_yum_repositories }}"
+    dest: /etc/yum.repos.d/docker_ce.repo
   when:
-    - ansible_pkg_mgr == "yum" or
-      ansible_pkg_mgr == "dnf"
+    - ansible_pkg_mgr in ["dnf", "yum"]
 
-- name: install docker pip packages
-  pip:
-    name: "{{ docker_ce_pip_packages }}"
-    state: present
-
-- name: add docker group
-  group:
-    name: docker
-    state: present
-    system: yes
-
-- name: install docker_ce
+- name: install docker_ce packages
   package:
     name: "{{ docker_ce_packages }}"
     state: present
