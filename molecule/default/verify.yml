@@ -13,3 +13,6 @@
           - "2222:22"
       when:
         - ansible_connection != "docker"
+
+    - name: check docker-compose
+      command: docker-compose --version
