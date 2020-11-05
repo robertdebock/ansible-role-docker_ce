@@ -1,49 +1,7 @@
 ---
 # vars file for docker_ce
 
-_docker_ce_conflicting_packages:
-  Alpine:
-    - docker
-  CentOS:
-    - docker
-    - docker-client
-    - docker-client-latest
-    - docker-common
-    - docker-latest
-    - docker-latest-logrotate
-    - docker-logrotate
-    - docker-engine
-  Debian:
-    - docker
-    - docker-engine
-    - docker.io
-    - containerd
-    - runc
-  Fedora:
-    - docker
-    - docker-client
-    - docker-client-latest
-    - docker-common
-    - docker-latest
-    - docker-latest-logrotate
-    - docker-logrotate
-    - docker-selinux
-    - docker-engine-selinux
-    - docker-engine
-  RedHat:
-    - docker
-    - docker-common
-    - docker-selinux
-    - docker-engine-selinux
-    - docker-engine
-  Ubuntu:
-    - docker
-    - docker-engine
-    - docker.io
-    - containerd
-    - runc
-
-_docker_ce_arches:
+_docker_ce_arch:
   default: amd64
   x86_64: amd64
   aarch64: arm64
@@ -51,27 +9,19 @@ _docker_ce_arches:
   s390x: s390x
   ppc64le: ppc64le
 
-docker_ce_conflicting_packages: "{{ _docker_ce_conflicting_packages[ansible_distribution] }}"
-
 # Debian / Ubuntu repo
 docker_ce_apt_key_url: "https://download.docker.com/linux/{{ ansible_distribution | lower }}/gpg"
-docker_ce_apt_repository_arch: "{{ _docker_ce_arches[ansible_architecture] | default(_docker_ce_arches['default']) }}"
+docker_ce_apt_repository_arch: "{{ _docker_ce_arch[ansible_architecture] | default(_docker_ce_arch['default']) }}"
 docker_ce_apt_repository_repo: "deb [arch={{ docker_ce_apt_repository_arch }}] https://download.docker.com/linux/{{ ansible_distribution | lower }} {{ ansible_distribution_release }} stable"
 
-# CentOs / Fedora / RedHat repo
+# CentOS / Fedora / RedHat repo
+_docker_ce_dist:
+  default: "{{ ansible_distribution | lower }}"
+  RedHat: rhel
 
-# RedHat is not availabe as a distro on http://download.docker.com/linux, replace it with CentOS
-_docker_ce_yum_distribution: "{% if ansible_distribution == 'RedHat' %}CentOS{% else %}{{ ansible_distribution }}{% endif %}"
-_docker_ce_yum_releasever: "{% if ansible_distribution in ['CentOS','RedHat'] %}{{ ansible_distribution_major_version }}{% else %}$releasever{% endif %}"
-docker_ce_yum_repositories:
-  - name: docker-ce-stable
-    description: "Docker CE Stable - $basearch"
-    baseurl: "https://download.docker.com/linux/{{ _docker_ce_yum_distribution | lower }}/{{ _docker_ce_yum_releasever }}/$basearch/stable"
-    gpgkey: "https://download.docker.com/linux/{{ _docker_ce_yum_distribution | lower }}/gpg"
+docker_ce_dist: "{{ _docker_ce_dist[ansible_distribution] | default(_docker_ce_dist['default']) }}"
 
-docker_ce_pip_packages:
-  - docker
-  - docker-compose
+docker_ce_yum_repositories: "https://download.docker.com/linux/{{ docker_ce_dist }}/docker-ce.repo"
 
 docker_ce_packages:
   - docker-ce
