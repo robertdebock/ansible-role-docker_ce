@@ -27,6 +27,5 @@ docker_ce_packages:
   - docker-ce
   - docker-ce-cli
   - containerd.io
-  - docker-compose
 
 docker_ce_service: docker

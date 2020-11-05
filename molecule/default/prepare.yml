@@ -10,3 +10,4 @@
     - role: robertdebock.epel
     - role: robertdebock.buildtools
     - role: robertdebock.python_pip
+    - role: robertdebock.core_dependencies
