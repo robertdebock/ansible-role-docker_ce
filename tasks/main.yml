@@ -22,7 +22,7 @@
     url: "{{ docker_ce_yum_repositories }}"
     dest: /etc/yum.repos.d/docker_ce.repo
   when:
-    - ansible_pkg_mgr in ["dnf", "yum"]
+    - ansible_pkg_mgr in [ "dnf", "yum" ]
 
 - name: install docker_ce packages
   package:
