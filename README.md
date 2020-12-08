@@ -2,9 +2,9 @@
 
 Install and configure Docker CE on your system.
 
-|Travis|GitHub|Quality|Downloads|Version|
-|------|------|-------|---------|-------|
-|[![travis](https://travis-ci.com/robertdebock/ansible-role-docker_ce.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-docker_ce)|[![github](https://github.com/robertdebock/ansible-role-docker_ce/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-docker_ce/actions)|[![quality](https://img.shields.io/ansible/quality/37728)](https://galaxy.ansible.com/robertdebock/docker_ce)|[![downloads](https://img.shields.io/ansible/role/d/37728)](https://galaxy.ansible.com/robertdebock/docker_ce)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-docker_ce.svg)](https://github.com/robertdebock/ansible-role-docker_ce/releases/)|
+|Travis|GitHub|GitLab|Quality|Downloads|Version|
+|------|------|------|-------|---------|-------|
+|[![travis](https://travis-ci.com/robertdebock/ansible-role-docker_ce.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-docker_ce)|[![github](https://github.com/robertdebock/ansible-role-docker_ce/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-docker_ce/actions)|[![gitlab](https://gitlab.com/robertdebock/ansible-role-docker_ce/badges/master/pipeline.svg)](https://gitlab.com/robertdebock/ansible-role-docker_ce)|[![quality](https://img.shields.io/ansible/quality/37728)](https://galaxy.ansible.com/robertdebock/docker_ce)|[![downloads](https://img.shields.io/ansible/role/d/37728)](https://galaxy.ansible.com/robertdebock/docker_ce)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-docker_ce.svg)](https://github.com/robertdebock/ansible-role-docker_ce/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
