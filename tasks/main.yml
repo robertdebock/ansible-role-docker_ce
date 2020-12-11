@@ -1,21 +1,21 @@
 ---
 # tasks file for docker_ce
 
-- name: install apt key
-  apt_key:
-    url: "{{ docker_ce_apt_key_url }}"
-    state: present
-  when:
-    - ansible_pkg_mgr == "apt"
+- name: configure debian like systems
+  block:
+    - name: install apt key
+      apt_key:
+        url: "{{ docker_ce_apt_key_url }}"
+        state: present
 
-- name: install docker_ce repository for apt
-  apt_repository:
-    repo: "{{ docker_ce_apt_repository_repo }}"
-    state: present
+    - name: install docker_ce repository for apt
+      apt_repository:
+        repo: "{{ docker_ce_apt_repository_repo }}"
+        state: present
+      notify:
+        - apt update cache
   when:
     - ansible_pkg_mgr == "apt"
-  notify:
-    - apt update cache
 
 - name: install docker_ce repository for dnf/yum
   get_url:
