@@ -6,7 +6,7 @@
     name: "{{ docker_ce_requirements }}"
     state: present
   when:
-    - docker_ca_requirement | length > 0
+    - docker_ce_requirement is iterable
 
 - name: configure debian like systems
   block:
