@@ -1,6 +1,13 @@
 ---
 # vars file for docker_ce
 
+_docker_ce_requirements:
+  default: ""
+  RedHat-7:
+    - iptables
+
+docker_ce_requirements: "{{ _docker_ce_requirements[ansible_os_family ~ '-' ~ ansible_distribution_major_version] | default(_docker_ce_requirements['default']) }}"
+
 _docker_ce_arch:
   default: amd64
   x86_64: amd64

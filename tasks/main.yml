@@ -1,6 +1,11 @@
 ---
 # tasks file for docker_ce
 
+- name: install required packages
+  package:
+    name: "{{ docker_ce_requirements }}"
+    state: present
+
 - name: configure debian like systems
   block:
     - name: install apt key
