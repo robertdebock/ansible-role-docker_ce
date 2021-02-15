@@ -5,6 +5,11 @@
   gather_facts: no
 
   tasks:
+    - name: install pip docker-py
+      pip:
+        name: docker-py
+        state: present
+
     - name: Create a container
       docker_container:
         name: openssh

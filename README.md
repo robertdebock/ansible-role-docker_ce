@@ -27,7 +27,6 @@ The machine needs to be prepared in CI this is done using `molecule/resources/pr
   hosts: all
   gather_facts: no
   become: yes
-  serial: 30%
 
   roles:
     - role: robertdebock.bootstrap
