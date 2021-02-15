@@ -1,0 +1,6 @@
+---
+exceptions:
+  - variation: amazonlinux
+    reason: "python2 is installed already."
+  - variation: alpine
+    reason: "Failed to create temporary directory."
