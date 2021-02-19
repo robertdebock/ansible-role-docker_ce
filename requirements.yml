@@ -5,5 +5,3 @@ roles:
   - name: robertdebock.core_dependencies
   - name: robertdebock.epel
   - name: robertdebock.python_pip
-collections:
-  - name: ansible.builtin
