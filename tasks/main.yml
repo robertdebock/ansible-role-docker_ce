@@ -11,12 +11,12 @@
 - name: configure debian like systems
   block:
     - name: install apt key
-      apt_key:
+      ansible.builtin.apt_key:
         url: "{{ docker_ce_apt_key_url }}"
         state: present
 
     - name: install docker_ce repository for apt
-      apt_repository:
+      ansible.builtin.apt_repository:
         repo: "{{ docker_ce_apt_repository_repo }}"
         state: present
       notify:
