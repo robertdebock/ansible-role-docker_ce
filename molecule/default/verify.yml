@@ -6,7 +6,7 @@
 
   tasks:
     - name: install pip docker-py
-      pip:
+      ansible.builtin.pip:
         name: docker-py
         state: present
 
