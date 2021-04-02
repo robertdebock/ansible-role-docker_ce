@@ -70,7 +70,7 @@ This role has been tested on these [container images](https://hub.docker.com/u/r
 |---------|----|
 |debian|buster|
 |el|8|
-|fedora|32|
+|fedora|32, 33|
 |ubuntu|focal, bionic|
 
 The minimum version of Ansible required is 2.10, tests have been done to:
@@ -91,7 +91,6 @@ Some variarations of the build matrix do not work. These are the variations and 
 | CentOS 8 | Not supported. |
 | OpenSUSE Leap | Not supported. |
 | Ubuntu devel | Not supported. |
-| fedora:33 | The RPMs are not published at https://download.docker.com/linux/fedora |
 
 
 If you find issues, please register them in [GitHub](https://github.com/robertdebock/ansible-role-docker_ce/issues)
