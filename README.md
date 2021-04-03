@@ -105,6 +105,7 @@ I'd like to thank everybody that made contributions to this repository. It motiv
 
 - [fzarifian](https://github.com/fzarifian)
 - [jellevandehaterd](https://github.com/jellevandehaterd)
+- [gotmax23](https://github.com/gotmax23)
 
 ## [Author Information](#author-information)
 
