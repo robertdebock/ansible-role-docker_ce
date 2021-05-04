@@ -17,7 +17,8 @@ galaxy_info:
         - 8
     - name: Fedora
       versions:
-        - all
+        - 33
+        - 34
     - name: Ubuntu
       versions:
         - focal
