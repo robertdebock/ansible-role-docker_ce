@@ -5,6 +5,16 @@
   gather_facts: no
 
   tasks:
+    - name: Check docker group configuration
+      lineinfile:
+        path: /etc/group
+        regex: '^docker:x:\d*:woody,buzz$'
+        state: absent
+      check_mode: yes
+      register: docker_ce_group
+      changed_when: not docker_ce_group is changed
+      failed_when: docker_ce_group is changed
+
     - name: install pip docker-py
       ansible.builtin.pip:
         name: docker-py

@@ -6,3 +6,6 @@
 
   roles:
     - role: ansible-role-docker_ce
+      docker_ce_privileged_users:
+        - woody
+        - buzz
