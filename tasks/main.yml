@@ -41,9 +41,9 @@
     name: docker
     state: present
 
-- name: adding existing user '{{ user }}' to group docker
+- name: add privileged users to the docker user group
   user:
-    name: '{{ user }}'
+    name: "{{ user }}"
     groups: docker
     append: yes
   loop: "{{ docker_ce_privileged_users }}"
