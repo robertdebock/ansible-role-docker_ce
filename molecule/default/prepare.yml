@@ -10,7 +10,13 @@
     - role: robertdebock.buildtools
     - role: robertdebock.python_pip
     - role: robertdebock.core_dependencies
-    - role: robertdebock.users
-      users_user_list:
-        - name: woody
-        - name: buzz
+
+  tasks:
+    - name: Create test case users
+      user:
+        name: "{{ user }}"
+      loop:
+        - woody
+        - buzz
+      loop_control:
+        loop_var: user
