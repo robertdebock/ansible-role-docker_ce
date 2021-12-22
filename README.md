@@ -38,6 +38,19 @@ The machine needs to be prepared. In CI this is done using `molecule/default/pre
 
 Also see a [full explanation and example](https://robertdebock.nl/how-to-use-these-roles.html) on how to use these roles.
 
+## [Role Variables](#role-variables)
+
+The default values for the variables are set in `defaults/main.yml`:
+```yaml
+---
+# defaults file for docker_ce
+
+# Add users to the privileged docker group. For example:
+# docker_ce_privileged_users:
+#  - UserA
+#  - UserB
+docker_ce_privileged_users:
+```
 
 ## [Requirements](#requirements)
 
