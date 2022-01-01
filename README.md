@@ -62,7 +62,7 @@ The default values for the variables are set in `defaults/main.yml`:
 # docker_ce_privileged_users:
 #  - UserA
 #  - UserB
-docker_ce_privileged_users:
+docker_ce_privileged_users: []
 ```
 
 ## [Requirements](#requirements)
