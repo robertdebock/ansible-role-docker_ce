@@ -6,7 +6,7 @@
 
   tasks:
     - name: Check docker group configuration
-      lineinfile:
+      ansible.builtin.lineinfile:
         path: /etc/group
         regex: '^docker:x:\d*:woody,buzz$'
         state: absent
