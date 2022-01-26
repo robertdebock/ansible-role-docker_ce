@@ -40,7 +40,7 @@ The machine needs to be prepared. In CI this is done using `molecule/default/pre
 
   tasks:
     - name: Create test case users
-      user:
+      ansible.builtin.user:
         name: "{{ user }}"
       loop:
         - woody
