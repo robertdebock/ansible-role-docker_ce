@@ -35,7 +35,7 @@ jobs:
         config:
           - image: "debian"
             tag: "latest"
-          - image: "centos"
+          - image: "enterpriselinux"
             tag: "latest"
           - image: "fedora"
             tag: "34"
