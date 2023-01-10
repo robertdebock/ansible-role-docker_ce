@@ -7,6 +7,8 @@
     state: present
 
 - name: Configure debian like systems
+  when:
+    - ansible_pkg_mgr == "apt"
   block:
     - name: Install apt key
       ansible.builtin.apt_key:
@@ -19,8 +21,6 @@
         state: present
       notify:
         - Apt update cache
-  when:
-    - ansible_pkg_mgr == "apt"
 
 - name: Install docker_ce repository for dnf/yum
   ansible.builtin.get_url:
