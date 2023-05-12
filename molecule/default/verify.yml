@@ -15,7 +15,7 @@
       changed_when: not docker_ce_group is changed
       failed_when: docker_ce_group is changed
 
-    - name: install pip docker-py
+    - name: Install pip docker-py
       ansible.builtin.pip:
         name: docker-py
         state: present
