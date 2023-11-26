@@ -1,4 +1,4 @@
-# Ansible role [docker_ce](#docker_ce)
+# [Ansible role docker_ce](#docker_ce)
 
 Install and configure Docker CE on your system.
 
