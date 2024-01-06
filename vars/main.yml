@@ -18,8 +18,11 @@ _docker_ce_arch:
 
 # Debian / Ubuntu repo
 docker_ce_apt_key_url: "https://download.docker.com/linux/{{ ansible_distribution | lower }}/gpg"
+docker_ce_apt_gpg_key_dir: "/etc/apt/keyrings"
+docker_ce_apt_key_file: "docker.asc"
 docker_ce_apt_repository_arch: "{{ _docker_ce_arch[ansible_architecture] | default(_docker_ce_arch['default']) }}"
-docker_ce_apt_repository_repo: "deb [arch={{ docker_ce_apt_repository_arch }}] https://download.docker.com/linux/{{ ansible_distribution | lower }} {{ ansible_distribution_release }} stable"
+docker_ce_apt_repository_repo: "deb [arch={{ docker_ce_apt_repository_arch }} signed-by={{ docker_ce_apt_gpg_key_dir }}/{{ docker_ce_apt_key_file }}] https://download.docker.com/linux/{{ ansible_distribution | lower }} {{ ansible_distribution_release }} stable"
+docker_ce_apt_repository_repo_file: "/etc/apt/sources.list.d/docker"
 
 _docker_ce_dist:
   default: "{{ ansible_distribution | lower }}"

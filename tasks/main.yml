@@ -10,14 +10,22 @@
   when:
     - ansible_pkg_mgr == "apt"
   block:
+    - name: Ensure location exists for keeping apt gpg keys
+      ansible.builtin.file:
+        path: "{{ docker_ce_apt_gpg_key_dir }}"
+        state: directory
+        owner: root
+        group: root
+        mode: "0755"
     - name: Install apt key
-      ansible.builtin.apt_key:
+      ansible.builtin.get_url:
         url: "{{ docker_ce_apt_key_url }}"
-        state: present
-
+        dest: "{{ docker_ce_apt_gpg_key_dir }}/{{ docker_ce_apt_key_file }}"
+        mode: "0644"
     - name: Install docker_ce repository for apt
       ansible.builtin.apt_repository:
         repo: "{{ docker_ce_apt_repository_repo }}"
+        filename: "{{ docker_ce_apt_repository_repo_file }}"
         state: present
       notify:
         - Apt update cache
