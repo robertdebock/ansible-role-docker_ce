@@ -39,8 +39,6 @@ jobs:
             tag: "38"
           - image: "fedora"
             tag: "latest"
-          - image: "fedora"
-            tag: "rawhide"
           - image: "ubuntu"
             tag: "latest"
           - image: "ubuntu"
