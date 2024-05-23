@@ -21,13 +21,13 @@ molecule:
       - image: "fedora"
         tag: "38"
       - image: "fedora"
-        tag: "latest"
+        tag: "39"
       - image: "ubuntu"
         tag: "latest"
+      - image: "ubuntu"
+        tag: "jammy"
       - image: "ubuntu"
         tag: "focal"
-      - image: "ubuntu"
-        tag: "bionic"
 
 galaxy:
   script:
