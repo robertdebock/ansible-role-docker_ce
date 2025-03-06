@@ -18,7 +18,7 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
   gather_facts: true
 
   roles:
-    - role: robertdebock.docker_ce
+    - role: ansible-role-docker_ce
       docker_ce_privileged_users:
         - woody
         - buzz
