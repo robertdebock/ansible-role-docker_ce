@@ -28,8 +28,6 @@ molecule:
       - image: "fedora"
         tag: "39"
       - image: "ubuntu"
-        tag: "latest"
-      - image: "ubuntu"
         tag: "jammy"
 
 galaxy:

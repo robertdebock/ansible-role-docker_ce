@@ -20,7 +20,7 @@ galaxy_info:
         - "39"
     - name: Ubuntu
       versions:
-        - all
+        - jammy
 
   galaxy_tags:
     - dockerce
