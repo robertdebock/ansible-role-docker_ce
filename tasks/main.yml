@@ -8,7 +8,7 @@
 
 - name: Configure debian like systems
   when:
-    - ansible_pkg_mgr == "apt"
+    - ansible_facts['pkg_mgr'] == "apt"
   block:
     - name: Install apt key
       ansible.builtin.apt_key:
@@ -28,7 +28,7 @@
     dest: /etc/yum.repos.d/docker_ce.repo
     mode: "0640"
   when:
-    - ansible_pkg_mgr in [ "dnf", "yum", "dnf5" ]
+    - ansible_facts['pkg_mgr'] in [ "dnf", "yum", "dnf5" ]
 
 - name: Install docker_ce packages
   ansible.builtin.package:
