@@ -25,10 +25,6 @@ molecule:
         tag: "bookworm"
       - image: "enterpriselinux"
         tag: "latest"
-      - image: "fedora"
-        tag: "38"
-      - image: "fedora"
-        tag: "39"
       - image: "ubuntu"
         tag: "jammy"
 
