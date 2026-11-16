@@ -19,6 +19,7 @@
       ansible.builtin.pip:
         name: docker-py
         state: present
+        break_system_packages: true
 
     - name: Create a container
       docker_container:
