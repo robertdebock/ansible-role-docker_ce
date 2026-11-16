@@ -11,9 +11,10 @@
     - ansible_facts['pkg_mgr'] == "apt"
   block:
     - name: Install apt key
-      ansible.builtin.apt_key:
+      ansible.builtin.get_url:
         url: "{{ docker_ce_apt_key_url }}"
-        state: present
+        dest: /etc/apt/trusted.gpg.d/docker_ce.asc
+        mode: "0644"
 
     - name: Install docker_ce repository for apt
       ansible.builtin.apt_repository:
